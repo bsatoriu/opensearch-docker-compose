@@ -1,15 +1,5 @@
 # OpenSearch - Docker - Compose
 
-![OpenSearch version](https://img.shields.io/badge/OpenSearch%20version-2.19.1-blue)
-
-Dockerized cluster architecture for OpenSearch with compose.
-
-## Key concepts
-
-- OpenSearch is [the successor of OpenDistro](https://opendistro.github.io/for-elasticsearch/blog/2021/06/forward-to-opensearch/)
-- OpenSearch = Elasticsearch
-- OpenSearch Dashboards = Kibana
-
 ## Cluster setup
 
 Raise your host's ulimits for ElasticSearch to handle high I/O :
