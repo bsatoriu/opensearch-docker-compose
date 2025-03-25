@@ -15,13 +15,13 @@ plugins.security.ssl.transport.pemtrustedcas_filepath: certificates/ca/ca.pem
 plugins.security.ssl.transport.enforce_hostname_verification: false
 
 plugins.security.authcz.admin_dn:
-  - 'CN=ADMIN,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
+  - 'CN=ADMIN,O=JPL,L=PASADENA,ST=CA,C=US'
 plugins.security.nodes_dn:
-  - 'CN=os00,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os01,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os02,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os03,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os04,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os05,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os06,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
-  - 'CN=os07,O=EXAMPLE,L=PARIS,ST=IDF,C=FR'
+  - 'CN=os00,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os01,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os02,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os03,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os04,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os05,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os06,O=JPL,L=PASADENA,ST=CA,C=US'
+  - 'CN=os07,O=JPL,L=PASADENA,ST=CA,C=US'

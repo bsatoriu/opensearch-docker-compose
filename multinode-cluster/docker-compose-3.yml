@@ -1,0 +1,38 @@
+services:
+
+  os03:
+    restart: always
+    image: opensearchproject/opensearch:2.19.1
+    environment:
+      OPENSEARCH_JAVA_OPTS: "-Xms5120m -Xmx5120m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+      node.name: os03
+      discovery.seed_hosts: 172.31.33.211,172.31.43.30,172.31.36.23
+      cluster.initial_master_nodes: os01,os02,os03
+      network.publish_host: "172.31.36.23"
+      plugins.security.ssl.transport.pemkey_filepath: certificates/os03/os03.key # relative path
+      plugins.security.ssl.transport.pemcert_filepath: certificates/os03/os03.pem
+      plugins.security.ssl.http.pemkey_filepath: certificates/os03/os03.key
+      plugins.security.ssl.http.pemcert_filepath: certificates/os03/os03.pem
+      DISABLE_INSTALL_DEMO_CONFIG: "true"
+      JAVA_HOME: /usr/share/opensearch/jdk
+      bootstrap.memory_lock: "true" # along with the memlock settings below, disables swapping
+      network.host: "0.0.0.0"
+    ulimits: 
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - "./opensearch.yml:/usr/share/opensearch/config/opensearch.yml"
+      - "os-data3:/usr/share/opensearch/data"
+      - "./certs:/usr/share/opensearch/config/certificates:ro"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "1"
+    ports:
+      - 9200:9200
+      - 9600:9600 # required for Performance Analyzer
+
+volumes:
+  os-data3:
